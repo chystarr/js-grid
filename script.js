@@ -90,7 +90,7 @@ function clearAll(){
   for (let i = 0; i < numRows; i++) {
     let data_cells = rows[i].querySelectorAll("td"); // get all of the table data cells in the row
     for (let i = 0; i < numCols; i++) {
-      data_cells[i].style.backgroundColor = "white"; // fill the current data cell
+      data_cells[i].style.backgroundColor = "white"; // clear the current data cell
     }
   }
 }
