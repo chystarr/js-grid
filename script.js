@@ -68,15 +68,21 @@ function fillOne() {
     let data_cells = rows[i].querySelectorAll("td"); // get all of the data cells in the row
     for (let i = 0; i < numCols; i++) {
       let data = data_cells[i]; // data is a single td element
-      data.addEventListener("click", function() {
-        data.style.background = colorSelected;
+      data.addEventListener("click", function() { // function is activated upon click
+        data.style.backgroundColor = colorSelected;
       });
     }
   }
 }
 
 function fill(){
-  alert("Clicked Fill All")
+  let rows = document.getElementById("grid").querySelectorAll("tr"); // get all of the rows in the table
+  for (let i = 0; i < numRows; i++) {
+    let data_cells = rows[i].querySelectorAll("td"); // get all of the table data cells in the row
+    for (let i = 0; i < numCols; i++) {
+      data_cells[i].style.backgroundColor = colorSelected; // fill the current data cell
+    }
+  }
 }
 
 function clearAll(){
