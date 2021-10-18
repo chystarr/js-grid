@@ -62,7 +62,13 @@ function selected() {
 }
 
 function fillOne() {
-  
+  let rows = document.getElementById("grid").querySelectorAll("tr"); // get all of the rows in the table
+  for (let i = 0; i < numRows; i++) {
+    let data_cells = rows[i].querySelectorAll("td"); // get all of the data cells in the row
+    for (let i = 0; i < numCols; i++) {
+      data_cells[i].onclick = colorFill;
+    }
+  }
 }
 
 function fill(){
