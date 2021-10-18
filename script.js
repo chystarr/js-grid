@@ -20,8 +20,6 @@ function addC() {
   if (numCols === 0) { // if the grid is empty
     numRows++; // one new row has to be created
     let row = document.createElement("tr"); // create a new tr element
-    // let data = document.createElement("td"); // there will be one table data cell added to the row
-    // row.appendChild(data);
     document.getElementById("grid").appendChild(row); // add the created row to the grid
   }
   // otherwise, there is already at least one row in the grid
@@ -36,14 +34,21 @@ function addC() {
 
 //Remove a row
 function removeR() {
-  alert("Clicked Remove Row")
+  if (numRows !== 0) { // if there are 0 rows, then there are none to delete
+    numRows--;
+    let grid = document.getElementById("grid");
+    grid.removeChild(grid.lastElementChild); // remove the last row from the grid
+    if (numRows === 0) { // if the grid has been made empty
+      numCols = 0; // there are no longer any data table cells, so there should be 0 columns
+    }
+  }
 }
 //Remove a column
 function removeC() {
   alert("Clicked Remove Col")
 }
 //sets global var for selected color
-function selected(){
+function selected() {
   colorSelected = document.getElementById("selectedID").value;
   console.log(colorSelected);
 }
