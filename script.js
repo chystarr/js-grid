@@ -39,13 +39,22 @@ function removeR() {
     let grid = document.getElementById("grid");
     grid.removeChild(grid.lastElementChild); // remove the last row from the grid
     if (numRows === 0) { // if the grid has been made empty
-      numCols = 0; // there are no longer any data table cells, so there should be 0 columns
+      numCols = 0; // there are no longer any table data cells, so there should be 0 columns
     }
   }
 }
 //Remove a column
 function removeC() {
-  alert("Clicked Remove Col")
+  if (numCols !== 0) { // if there are 0 columns, then there are none to delete
+    numCols--;
+    let rows = document.getElementById("grid").querySelectorAll("tr"); // get all of the rows in the table
+    for (let i = 0; i < numRows; i++) { // for each row, one td element must be removed from the end
+      rows[i].removeChild(rows[i].lastElementChild); // remove the last data cell from each row
+    }
+    if (numCols === 0) { // if the grid is now empty
+      numRows = 0; // there are no longer any table data cells, so there should be 0 columns
+    }
+  }
 }
 //sets global var for selected color
 function selected() {
