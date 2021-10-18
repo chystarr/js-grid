@@ -61,6 +61,10 @@ function selected() {
   colorSelected = document.getElementById("selectedID").value;
 }
 
+function fillOne() {
+  
+}
+
 function fill(){
   alert("Clicked Fill All")
 }
