@@ -75,7 +75,7 @@ function fillOne() {
   }
 }
 
-function fill(){
+function fill() {
   let rows = document.getElementById("grid").querySelectorAll("tr"); // get all of the rows in the table
   for (let i = 0; i < numRows; i++) {
     let data_cells = rows[i].querySelectorAll("td"); // get all of the table data cells in the row
@@ -85,7 +85,7 @@ function fill(){
   }
 }
 
-function clearAll(){
+function clearAll() {
   let rows = document.getElementById("grid").querySelectorAll("tr"); // get all of the rows in the table
   for (let i = 0; i < numRows; i++) {
     let data_cells = rows[i].querySelectorAll("td"); // get all of the table data cells in the row
@@ -95,6 +95,15 @@ function clearAll(){
   }
 }
 
-function fillU(){
-  alert("Clicked Fill All Uncolored")
+function fillU() {
+  let rows = document.getElementById("grid").querySelectorAll("tr"); // get all of the rows in the table
+  for (let i = 0; i < numRows; i++) {
+    let data_cells = rows[i].querySelectorAll("td"); // get all of the table data cells in the row
+    for (let i = 0; i < numCols; i++) {
+      let data = data_cells[i];
+      if (data.style.backgroundColor === "white" || data.style.backgroundColor === "") { // if the data cell is uncolored
+        data.style.backgroundColor = colorSelected;
+      }
+    }
+  }
 }
