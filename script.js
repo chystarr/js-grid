@@ -1,6 +1,7 @@
 let numRows = 0;
 let numCols = 0;
-let colorSelected; 
+let colorSelected;
+document.getElementById("grid").addEventListener("click", fillOne);
 
 //Add a row
 function addR() {
@@ -66,7 +67,10 @@ function fillOne() {
   for (let i = 0; i < numRows; i++) {
     let data_cells = rows[i].querySelectorAll("td"); // get all of the data cells in the row
     for (let i = 0; i < numCols; i++) {
-      data_cells[i].onclick = colorFill;
+      let data = data_cells[i]; // data is a single td element
+      data.addEventListener("click", function() {
+        data.style.background = colorSelected;
+      });
     }
   }
 }
