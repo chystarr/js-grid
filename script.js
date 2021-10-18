@@ -1,6 +1,7 @@
 let numRows = 0;
 let numCols = 0;
-let colorSelected; 
+let colorSelected;
+document.getElementById("grid").addEventListener("click", fillOne);
 
 //Add a row
 function addR() {
@@ -59,6 +60,19 @@ function removeC() {
 //sets global var for selected color
 function selected() {
   colorSelected = document.getElementById("selectedID").value;
+}
+
+function fillOne() {
+  let rows = document.getElementById("grid").querySelectorAll("tr"); // get all of the rows in the table
+  for (let i = 0; i < numRows; i++) {
+    let data_cells = rows[i].querySelectorAll("td"); // get all of the data cells in the row
+    for (let i = 0; i < numCols; i++) {
+      let data = data_cells[i]; // data is a single td element
+      data.addEventListener("click", function() {
+        data.style.background = colorSelected;
+      });
+    }
+  }
 }
 
 function fill(){
