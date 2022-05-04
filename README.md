@@ -1,4 +1,4 @@
 # assignment3
-Practical Web Development (CSCI 39548) Assignment 3, Fall 2021
+JavaScript site utilizing DOM manipulation that allows users to create/customize a grid
 
 [Link to site](https://chystarr.github.io/assignment3/)
